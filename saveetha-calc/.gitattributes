@@ -1,0 +1,5 @@
+# Set default behavior to handle line endings consistently across platforms
+* text=auto
+
+# Ensure the repository stores `.gitignore` with LF endings to avoid churn on Windows
+.gitignore text eol=lf
