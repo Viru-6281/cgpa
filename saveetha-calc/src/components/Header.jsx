@@ -1,14 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <header className="site-header">
       <div className="logo">🎓</div>
-      <div className="brand"><h1>Saveetha Calculator</h1></div>
+      <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <div className="brand"><h1>Saveetha Calculator</h1></div>
+      </Link>
       <nav className="nav">
-        <span className="nav-link">Features</span>
-        <span className="nav-link">Tools</span>
-        <span className="nav-link">Contact Us</span>
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/cgpa" className="nav-link">CGPA</Link>
+        <Link to="/attendance" className="nav-link">Attendance</Link>
         <button className="login-btn">Login</button>
       </nav>
     </header>

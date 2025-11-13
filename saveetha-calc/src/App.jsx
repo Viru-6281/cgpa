@@ -1,22 +1,22 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
-import CGPACard from "./components/CGPACard.jsx";
-import AttendanceCard from "./components/AttendanceCard.jsx";
+import { routes } from "./routeConfig.jsx";
 import "./App.css";
 
 export default function App() {
   return (
-    <div className="page">
-      <Header />
-      <main className="content">
-        <h1 className="title">Calculators</h1>
-        <div className="two-col">
-          <CGPACard />
-          <AttendanceCard />
-        </div>
-      </main>
-      <FooterSpacer />
-    </div>
+    <Router basename="/cgpa">
+      <div className="page">
+        <Header />
+        <Routes>
+          {routes.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+        <FooterSpacer />
+      </div>
+    </Router>
   );
 }
 
